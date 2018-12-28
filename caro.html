@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>Caro Game Simple</h3>
+    <p id="carogame"/>
+    <input type="button" value="Change Value" onclick="changeValue()">
+    <script>
+        var b = document.getElementById("carogame");
+
+        var board = [];
+        var data = "";
+        for(var i = 0; i < 5; i++) {
+            board[i] = new Array(0, 0, 0, 0, 0);
+        }
+
+        for(var i = 0; i < 5; i++) {
+            data += "<br/>";
+            for(var j = 0; j < 5; j++){
+                data += board[i][j] + "&nbsp;&nbsp;";
+            }
+        }
+
+        data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
+        b.innerHTML = data;
+
+        function changeValue() {
+            var positionX = prompt("X: ");
+            var positionY = prompt("Y: ");
+            data = "";
+            board[positionX][positionY] = "x";
+            for(var i = 0; i < 5; i++) {
+                data += "<br/>";
+                for(var j = 0; j < 5; j++){
+                    data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+                }
+            }
+            data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
+            b.innerHTML = "<hr/>"+ data;
+        }
+
+    <!--&lt;!&ndash;</script>&ndash;&gt;-->
+    <!--<h1> Game cờ caro nâng cấp</h1>-->
+    <!--<div id="result"></div>-->
+    <!--<input type="button" value="Thay giá trị" onclick="changeFunction()"/>-->
+    <!--<script>-->
+        <!--var b = document.getElementById("result");-->
+        <!--var turn=1;-->
+        <!--var board = [];-->
+        <!--var data = "";-->
+        <!--for(var i = 0; i < 10; i++) {-->
+            <!--board[i] = [".", ".", ".", ".", ".",".",".",".",".","."];-->
+        <!--}-->
+        <!--for(var i = 0; i < 10; i++) {-->
+            <!--data += "<br/>";-->
+            <!--for(var j = 0; j < 10; j++){-->
+                <!--data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp";-->
+            <!--}-->
+        <!--}-->
+        <!--//data += "<br/><br/><input type='button' value='Thay giá trị' onclick='changeFunction()'>";-->
+        <!--&lt;!&ndash;b.innerHTML=data;&ndash;&gt;-->
+        <!--&lt;!&ndash;function checkWin(x,y) {&ndash;&gt;-->
+            <!--var checkPoint=board[x][y];-->
+            <!--if(checkPoint==="."){-->
+                <!--return false;-->
+            <!--}-->
+            <!--if(checkPoint===board[x-1][y-1]&&checkPoint===board[x+1][y+1]){-->
+                <!--return true;-->
+            <!--}-->
+            <!--if(checkPoint===board[x+1][y-1]&&checkPoint===board[x-1][y+1]){-->
+                <!--return true;-->
+            <!--}-->
+            <!--if(checkPoint===board[x][y-1]&&checkPoint===board[x][y+1]){-->
+                <!--return true;-->
+            <!--}-->
+            <!--if(checkPoint===board[x-1][y]&&checkPoint===board[x+1][y]){-->
+                <!--return true;-->
+            <!--}-->
+            <!--else{-->
+                <!--return false;-->
+            <!--}-->
+        <!--}-->
+        <!--function changeFunction() {-->
+            <!--var x=parseInt(prompt("Nhap toa do x: "));-->
+            <!--var y=parseInt(prompt("Nhap toa do y: "));-->
+            <!--data = "";-->
+            <!--if(turn%2==1){-->
+                <!--board[x][y] = "x";-->
+                <!--turn+=1;-->
+            <!--}-->
+            <!--else{-->
+                <!--board[x][y] = "o";-->
+                <!--turn+=1;-->
+            <!--}-->
+            <!--for(var i = 0; i < 10; i++) {-->
+                <!--data += "<br/>";-->
+                <!--for(var j = 0; j < 10; j++){-->
+                    <!--data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";-->
+                <!--}-->
+            <!--}-->
+            <!--//data += "<br/><br/><input type='button' value='Thay giá trị' onclick='changeFunction()'>";-->
+            <!--b.innerHTML = "<hr/>"+ data;-->
+            <!--if(checkWin(x,y)||checkWin(x-1,y)||checkWin(x-1,y-1)||checkWin(x-1,y+1)||checkWin(x+1,y-1)-->
+                <!--||checkWin(x+1,y)||checkWin(x+1,y+1)||checkWin(x,y-1)||checkWin(x,y+1)){-->
+                <!--if(turn%2==0){-->
+                    <!--alert("X Thắng!");-->
+                <!--}-->
+                <!--else{-->
+                    <!--alert("O Thắng!");-->
+                <!--}-->
+            <!--}-->
+        <!--}-->
+    </script>
+</body>
+</html>
